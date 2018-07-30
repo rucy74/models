@@ -98,7 +98,11 @@ def train_teacher(dataset, nb_teachers, teacher_id):
 
 def main(argv=None):  # pylint: disable=unused-argument
   # Make a call to train_teachers with values specified in flags
-  assert train_teacher(FLAGS.dataset, FLAGS.nb_teachers, FLAGS.teacher_id)
+  #assert train_teacher(FLAGS.dataset, FLAGS.nb_teachers, FLAGS.teacher_id)
+
+
+  for i in range(0, FLAGS.nb_teachers):
+    assert train_teacher(FLAGS.dataset, FLAGS.nb_teachers, i)
 
 if __name__ == '__main__':
   tf.app.run()
